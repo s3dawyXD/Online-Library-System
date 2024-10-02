@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     # local apps
     "books",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -159,6 +160,8 @@ REST_AUTH = {
     "JWT_AUTH_HTTPONLY": False,
     "OLD_PASSWORD_FIELD_ENABLED": True,
     "JWT_AUTH_RETURN_EXPIRATION": True,
+    "USER_DETAILS_SERIALIZER": "users.api.serializers.UserSerializer",
+    # "LOGIN_SERIALIZER": "users.api.serializers.UserLoginSerializer",
 }
 
 SIMPLE_JWT = {
@@ -183,7 +186,7 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
 
-# AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "users.User"
 
 SWAGGER_SETTINGS = {
     "USE_SESSION_AUTH": False,
