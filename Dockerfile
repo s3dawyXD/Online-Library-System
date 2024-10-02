@@ -6,20 +6,21 @@ WORKDIR /app
 
 
 # Copy only the requirements file initially to leverage Docker cache
-COPY requirements/* .
+COPY requirements.txt requirements.txt
+COPY entrypoint.sh .
 
-ENV PIP_CONSTRAINT=constraints.txt
+# ENV PIP_CONSTRAINT=constraints.txt
 
 RUN apt-get update && apt-get install -y gdal-bin libgdal-dev
 
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r local.txt \
-    && pip install psycopg2  # Ensure all your requirements are correctly listed in local.txt
+    && pip install --no-cache-dir -r requirements.txt \
+    && pip install psycopg2  
 
 # Copy the rest of the application code
-COPY . .
+COPY /online_library_system .
 
 # Create a logs directory and grant permissions
 RUN mkdir logs && chmod 777 logs
