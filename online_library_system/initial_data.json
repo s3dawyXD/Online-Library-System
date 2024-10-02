@@ -1,0 +1,70 @@
+[
+    {
+        "model": "books.category",
+        "pk": 1,
+        "fields": {
+            "name": "Fiction"
+        }
+    },
+    {
+        "model": "books.category",
+        "pk": 2,
+        "fields": {
+            "name": "Romance"
+        }
+    },
+    {
+        "model": "books.category",
+        "pk": 3,
+        "fields": {
+            "name": "Novel"
+        }
+    },
+    {
+        "model": "books.author",
+        "pk": 1,
+        "fields": {
+            "name": "Naguib Mahfouz"
+        }
+    },
+    {
+        "model": "books.author",
+        "pk": 2,
+        "fields": {
+            "name": "Ahmed Khaled Tawfik"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 1,
+        "fields": {
+            "title": "The Harafish",
+            "author": 1,
+            "description": "empty description",
+            "year": 1977,
+            "category": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 2,
+        "fields": {
+            "title": "The Crime",
+            "author": 1,
+            "description": "empty description",
+            "year": 1973,
+            "category": 1
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 3,
+        "fields": {
+            "title": "Utopia",
+            "author": 2,
+            "description": "empty description",
+            "year": 2008,
+            "category": 1
+        }
+    }
+]
