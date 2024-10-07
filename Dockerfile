@@ -35,5 +35,5 @@ RUN chmod +x /entrypoint.sh
 
 # Define the default command to run when the container starts.
 # You might want to modify this to start both your Django app and Celery workers
-CMD ["/entrypoint.sh"]
+# CMD ["/entrypoint.sh"]
 

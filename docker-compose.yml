@@ -15,6 +15,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: >
+      sh -c "python online_library_system/manage.py migrate &&
+             python online_library_system/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
